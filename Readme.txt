@@ -1,1 +1,1 @@
-Hello, this is Veda
+CYpress installation
