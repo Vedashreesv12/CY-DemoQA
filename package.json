@@ -1,19 +1,25 @@
 {
   "name": "cy-demoqa",
   "version": "1.0.0",
-  "description": "My first project",
+  "description": "Using Cypress to test on demoqa.com",
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "cypress:verify": "cypress verify",
-    "cypress:version": "cypress version"
+    "cypress:version": "cypress version",
+    "test:chrome": "cypress run --browser chrome",
+    "test:chrome-headed": "cypress run --browser chrome --headed"
+
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
-    "stepDefinitions": "Steps"
+    "html": {
+      "enabled": true
+    }
   },
+  "format": "prettier --write '**/*.{js,ts,json,feature}'",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vedashreesv12/CY-DemoQA.git"
@@ -22,22 +28,16 @@
     "Automation"
   ],
   "author": "Veda",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Vedashreesv12/CY-DemoQA/issues"
-  },
+  "license": "MIT",
   "homepage": "https://github.com/Vedashreesv12/CY-DemoQA#readme",
-  "devDependencies": {
-    "@cucumber/cucumber": "^11.2.0",
-    "@cucumber/pretty-formatter": "^1.0.1",
-    "@types/node": "^22.13.9",
-    "cypress": "^14.1.0",
-    "cypress-cucumber-preprocessor": "^4.3.1",
-    "ts-node": "^10.9.2"
-  },
   "dependencies": {
-    "@types/cucumber-html-reporter": "^5.0.0",
-    "cucumber-html-reporter": "^6.0.0",
-    "prettier": "^3.5.3"
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/cypress": "^1.1.3",
+    "@types/node": "^20.10.6",
+    "cypress": "^13.17.0",
+    "typescript": "^5.3.3"
   }
 }
